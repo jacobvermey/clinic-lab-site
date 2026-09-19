@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Clinic Lab — Ontario pilot sandbox</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2329675b'/%3E%3Cpath d='M20 18v22a12 12 0 0024 0V18' fill='none' stroke='%23fff' stroke-width='7'/%3E%3C/svg%3E"
+    />
+    <script type="module" crossorigin src="./assets/index-BBniBDuD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BvK6HJDS.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Clinic Lab home"
+        ><span class="brand-symbol">∪</span
+        ><span
+          >Clinic<span class="brand-light">lab</span><small>PRIMARY CARE PLANNING</small></span
+        ></a
+      >
+      <div class="project-label">WORKSPACE</div>
+      <div class="project">
+        <span class="project-dot"></span>
+        <div>Ontario pilot<small>Primary care · Toronto</small></div>
+        <span class="project-arrow">⌄</span>
+      </div>
+      <nav aria-label="Workspace tools">
+        <button data-tab="overview" class="nav-item">
+          <span class="nav-icon">▤</span>Pilot overview<span class="nav-number">00</span>
+        </button>
+        <button data-tab="floor" class="nav-item active">
+          <span class="nav-icon">▦</span>Floor planner<span class="nav-number">01</span>
+        </button>
+        <button data-tab="economics" class="nav-item">
+          <span class="nav-icon">↗</span>Economics<span class="nav-number">02</span>
+        </button>
+        <button data-tab="flow" class="nav-item">
+          <span class="nav-icon">⇄</span>Patient flow<span class="nav-number">03</span>
+        </button>
+        <button data-tab="evidence" class="nav-item">
+          <span class="nav-icon">≡</span>Assumptions & sources<span class="nav-number">04</span>
+        </button>
+        <button data-tab="audit" class="nav-item">
+          <span class="nav-icon">≡</span>Capacity audit<span class="nav-number">05</span>
+        </button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="eyebrow">PILOT PLANNING</span>
+        <p>Clinic design, operating capacity and financial assumptions.</p>
+        <div class="connection-dots"><i></i><span></span><i></i><span></span><i></i></div>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>Scenario model<small>CAD · ft² · annual economics</small>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">
+          Ontario pilot <span>/</span> <strong id="breadcrumb-title">Floor planner</strong>
+        </div>
+        <div class="top-actions">
+          <span id="save-status" class="save-status">Saved on this device</span
+          ><button class="button quiet" id="import-button">Import</button
+          ><button class="button" id="export-button">Export scenario ↗</button
+          ><input id="import-file" type="file" accept="application/json,.json" hidden />
+        </div>
+      </header>
+      <main id="main">
+        <div id="save-conflict" class="notice" role="status" hidden>
+          Another tab saved changes before this tab could save. Your edit is only kept in this tab
+          and has not overwritten the shared save. Export a backup before closing, reloading or
+          choosing.
+          <button class="button" id="load-shared-scenario">Load the other tab's save</button>
+          <button class="button" id="replace-shared-scenario">
+            Use this tab's version instead
+          </button>
+        </div>
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow" id="page-eyebrow">01 / SPACE & CAPACITY</div>
+            <h1 id="page-title">A better practice starts with space.</h1>
+            <p id="page-subtitle">
+              Shape the horseshoe. Size the support rooms. See what your pilot actually needs.
+            </p>
+          </div>
+          <div class="scenario-picker">
+            <label for="preset">STARTING SCENARIO</label
+            ><select id="preset">
+              <option value="8">Compact pilot · 8 rooms</option>
+              <option value="10">Intermediate · 10 rooms</option>
+              <option value="14">Larger site · 14 rooms</option>
+              <option value="custom">Custom scenario</option>
+            </select>
+          </div>
+        </div>
+        <section id="overview-panel" data-panel="overview"></section>
+        <section id="floor-panel" data-panel="floor"></section>
+        <section id="economics-panel" data-panel="economics" hidden></section>
+        <section id="flow-panel" data-panel="flow" hidden></section>
+        <section id="evidence-panel" data-panel="evidence" hidden></section>
+        <section id="audit-panel" data-panel="audit" hidden></section>
+        <footer>
+          Planning scenario <span>•</span> Assumptions are editable <span>•</span> Evidence reviewed
+          19 September 2026
+        </footer>
+      </main>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
