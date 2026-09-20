@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="color-scheme" content="light" />
-    <title>Clinic Lab — Ontario pilot sandbox</title>
+    <title>Clinic Lab — Ontario clinic model</title>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2329675b'/%3E%3Cpath d='M20 18v22a12 12 0 0024 0V18' fill='none' stroke='%23fff' stroke-width='7'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-Cr4S4REB.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BW4jEqO8.css">
+    <script type="module" crossorigin src="./assets/index-CEOJSLGX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-mslH6DPK.css">
   </head>
   <body>
     <aside class="sidebar">
@@ -74,35 +74,29 @@
         <div class="top-actions">
           <span id="save-status" class="save-status">Saved on this device</span
           ><button class="button quiet" id="import-button">Import</button
-          ><button class="button" id="export-button">Export scenario ↗</button
+          ><button class="button" id="export-button">Export scenario</button
           ><input id="import-file" type="file" accept="application/json,.json" hidden />
         </div>
       </header>
       <main id="main">
         <div id="save-conflict" class="notice" role="status" hidden>
-          Another tab saved changes before this tab could save. Your edit is only kept in this tab
-          and has not overwritten the shared save. Export a backup before closing, reloading or
-          choosing.
-          <button class="button" id="load-shared-scenario">Load the other tab's save</button>
-          <button class="button" id="replace-shared-scenario">
-            Use this tab's version instead
-          </button>
+          Another tab saved changes. Export this version before reloading or replacing it.
+          <button class="button" id="load-shared-scenario">Load shared save</button>
+          <button class="button" id="replace-shared-scenario">Replace shared save</button>
         </div>
         <div class="page-heading">
           <div>
             <div class="eyebrow" id="page-eyebrow">01 / SPACE & CAPACITY</div>
-            <h1 id="page-title">A better practice starts with space.</h1>
-            <p id="page-subtitle">
-              Shape the horseshoe. Size the support rooms. See what your pilot actually needs.
-            </p>
+            <h1 id="page-title">Floor planner</h1>
+            <p id="page-subtitle"></p>
           </div>
           <div class="scenario-picker">
-            <label for="preset">STARTING SCENARIO</label
+            <label for="preset">SCENARIO</label
             ><select id="preset">
               <option value="published">Published pilot · 8 rooms</option>
-              <option value="8">Compact pilot · 8 rooms</option>
-              <option value="10">Intermediate · 10 rooms</option>
-              <option value="14">Larger site · 14 rooms</option>
+              <option value="8">Automatic · 8 rooms</option>
+              <option value="10">Automatic · 10 rooms</option>
+              <option value="14">Automatic · 14 rooms</option>
               <option value="custom">Custom scenario</option>
             </select>
           </div>
@@ -113,10 +107,6 @@
         <section id="flow-panel" data-panel="flow" hidden></section>
         <section id="evidence-panel" data-panel="evidence" hidden></section>
         <section id="audit-panel" data-panel="audit" hidden></section>
-        <footer>
-          Planning scenario <span>•</span> Assumptions are editable <span>•</span> Evidence reviewed
-          19 September 2026
-        </footer>
       </main>
     </div>
     <div id="toast" role="status" aria-live="polite"></div>
